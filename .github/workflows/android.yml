@@ -34,14 +34,14 @@ jobs:
 
       - name: Preparar Android SDK
         uses: android-actions/setup-android@v3
-
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+     
       - name: Instalar componentes Android
         run: yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
-      - with:
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
-
-      - name: Compilar APK
+      
+         - name: Compilar APK
         run: |
           cd AegisNexus-Android
           gradle assembleDebug --no-daemon
