@@ -38,6 +38,7 @@ jobs:
       - name: Instalar componentes Android
         run: yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+    
 
       - name: Compilar APK
         run: |
